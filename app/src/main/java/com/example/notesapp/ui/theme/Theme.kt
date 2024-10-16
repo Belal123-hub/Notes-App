@@ -1,4 +1,4 @@
-package com.example.notes.ui.theme
+package com.example.notesapp.ui.theme
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors

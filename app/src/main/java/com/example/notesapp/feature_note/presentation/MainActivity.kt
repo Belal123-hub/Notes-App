@@ -1,4 +1,4 @@
-package com.example.notes
+package com.example.notesapp.feature_note.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 import androidx.compose.ui.Modifier
-import com.example.notes.ui.theme.NotesTheme
+import com.example.notesapp.ui.theme.NotesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ fun Greetings(name:String){
 
 @Preview
 @Composable
-fun greetingPerview(){
+fun GreetingPreview(){
     Greetings(name = "android")
 }
 
