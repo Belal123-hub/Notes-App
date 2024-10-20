@@ -1,4 +1,3 @@
-You can find apk in the root folder
 
 The libraries were used in this app:
 
