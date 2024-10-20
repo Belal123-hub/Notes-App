@@ -5,10 +5,10 @@ The libraries were used in this app:
 **1. Room**
    Why Room?
 
-1-Type Safety: Room provides a type-safe abstraction layer over SQLite, reducing the risk of runtime errors and improving code maintainability.
-2-Simplified Database Operations: It handles common database tasks like queries, insertions, updates, and deletions, making database interactions more straightforward.
-3-LiveData Integration: Room seamlessly integrates with LiveData, enabling automatic updates to your UI when database data changes, simplifying data synchronization.
-4-Entity Validation: You can define validation rules for your entities, ensuring data integrity and preventing invalid data from being stored.
+1.Type Safety: Room provides a type-safe abstraction layer over SQLite, reducing the risk of runtime errors and improving code maintainability.
+2.Simplified Database Operations: It handles common database tasks like queries, insertions, updates, and deletions, making database interactions more straightforward.
+3.LiveData Integration: Room seamlessly integrates with LiveData, enabling automatic updates to your UI when database data changes, simplifying data synchronization.
+4.Entity Validation: You can define validation rules for your entities, ensuring data integrity and preventing invalid data from being stored.
 **Alternatives and Why Room is Preferred:**
 
 Direct SQLite Usage: While possible, direct SQLite usage is more error-prone and requires more manual management of database transactions and updates.
