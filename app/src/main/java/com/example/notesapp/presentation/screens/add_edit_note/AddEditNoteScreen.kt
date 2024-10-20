@@ -34,10 +34,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.notes.R
 import com.example.notesapp.domain.model.Note
 import com.example.notesapp.presentation.screens.add_edit_note.components.TransparentHintTextField
 import com.example.notesapp.presentation.screens.add_edit_note.model.AddEditNoteEvent
@@ -62,7 +64,6 @@ fun AddEditNoteScreen(
     }
     val scope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState()
-
     LaunchedEffect(key1 = true) {
         viewModel.eventFlow.collectLatest { event ->
             when (event) {
@@ -78,14 +79,16 @@ fun AddEditNoteScreen(
             }
         }
     }
-
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { viewModel.onEvent(AddEditNoteEvent.SaveNote) },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
-                Icon(imageVector = Icons.Default.Save, contentDescription = "Save note")
+                Icon(
+                    imageVector = Icons.Default.Save,
+                    contentDescription = stringResource(R.string.save_note)
+                )
             }
         },
         scaffoldState = scaffoldState
@@ -125,7 +128,6 @@ fun AddEditNoteScreen(
                                     )
                                 }
                                 viewModel.onEvent(AddEditNoteEvent.ChangeColor(colorInt))
-
                             }
                     )
                 }
@@ -133,7 +135,7 @@ fun AddEditNoteScreen(
             Spacer(modifier = Modifier.height(16.dp))
             TransparentHintTextField(
                 text = title,
-                hint = "Enter title.....",
+                hint = stringResource(R.string.enter_title),
                 onValueChange = { newText ->
                     viewModel.onEvent(AddEditNoteEvent.EnteredTitle(newText))
                 },
@@ -144,7 +146,7 @@ fun AddEditNoteScreen(
             Spacer(modifier = Modifier.height(16.dp))
             TransparentHintTextField(
                 text = content,
-                hint = "Enter some content..",
+                hint = stringResource(R.string.enter_some_content),
                 onValueChange = { newText ->
                     viewModel.onEvent(AddEditNoteEvent.EnteredContent(newText))
                 },

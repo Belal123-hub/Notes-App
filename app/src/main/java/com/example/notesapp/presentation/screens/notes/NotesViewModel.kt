@@ -30,7 +30,6 @@ class NotesViewModel @Inject constructor(
     init {
         getNotes(NoteOrder.Date(OrderType.Descending))
     }
-
     fun onEvent(event: NotesEvent) {
         when (event) {
             is NotesEvent.Order -> {
@@ -65,7 +64,6 @@ class NotesViewModel @Inject constructor(
 
         }
     }
-
     private fun getNotes(noteOrder: NoteOrder) {
         getNotesJob?.cancel()
         getNotesJob = noteUseCases.getNotesUseCase(noteOrder)
@@ -77,5 +75,4 @@ class NotesViewModel @Inject constructor(
             }
             .launchIn(viewModelScope)
     }
-
 }

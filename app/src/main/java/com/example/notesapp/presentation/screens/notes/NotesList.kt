@@ -42,7 +42,6 @@ fun NotesList(
                             actionLabel = "Undo"
                         )
                         if (result == SnackbarResult.ActionPerformed) {
-                            // Handle undo action if necessary
                         }
                     }
                 }

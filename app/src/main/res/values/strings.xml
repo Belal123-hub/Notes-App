@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Notes</string>
+    <string name="no_notes">No notes</string>
+    <string name="no_notes_available_please_add_a_note">No notes available! Please add a note.</string>
+    <string name="add_note">Add note</string>
+    <string name="your_notes">Your notes</string>
+    <string name="sort">Sort</string>
+    <string name="delete_note">Delete note</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="color">Color</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="save_note">Save note</string>
+    <string name="enter_title">Enter title.....</string>
+    <string name="enter_some_content">Enter some content..</string>
+    <string name="notecolor">noteColor</string>
+    <string name="noteid_noteid_notecolor_notecolor"><![CDATA[\?noteId={noteId}&noteColor={noteColor}]]></string>
+    <string name="noteid">noteId</string>
+    <string name="note_color">noteColor</string>
 </resources>

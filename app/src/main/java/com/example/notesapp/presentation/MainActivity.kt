@@ -9,11 +9,13 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.notes.R
 import com.example.notesapp.presentation.screens.add_edit_note.AddEditNoteScreen
 import com.example.notesapp.presentation.screens.notes.NotesScreen
 import com.example.notesapp.presentation.ui.theme.NotesTheme
@@ -27,7 +29,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             NotesTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -42,23 +43,24 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(
                             route = Screen.AddEditNoteScreen.route +
-                                    "?noteId={noteId}&noteColor={noteColor}",
+                                    getString(R.string.noteid_noteid_notecolor_notecolor),
                             arguments = listOf(
                                 navArgument(
-                                    name = "noteId"
+                                    name = getString(R.string.noteid)
                                 ) {
                                     type = NavType.IntType
                                     defaultValue = -1
                                 },
                                 navArgument(
-                                    name = "noteColor"
+                                    name = getString(R.string.note_color)
                                 ) {
                                     type = NavType.IntType
                                     defaultValue = -1
                                 }
                             )
                         ) {
-                            val color = it.arguments?.getInt("noteColor") ?: -1
+                            val color =
+                                it.arguments?.getInt(stringResource(R.string.notecolor)) ?: -1
                             AddEditNoteScreen(
                                 navController = navController,
                                 noteColor = color
